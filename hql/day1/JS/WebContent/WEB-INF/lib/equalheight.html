@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.main {
+	width: 900px;
+	float: left;
+} 
+.left {
+	background-color: yellow;
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	height:  700px;
+}
+.middle {
+	background-color: orange;
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	height: 700px;
+}
+.right {
+	background-color: pink;
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	height: 700px;
+}
+</style>
+<script>
+function show() {
+	var div = document.createElement("div");
+	div.setAttribute("class","left");
+	div.innerHTML = "Hello";
+	document.getElementById("main").appendChild(div);
+	
+	var div1 = document.createElement("div");
+	div1.setAttribute("class","middle");
+	div1.innerHTML = "Hai";
+	document.getElementById("main").appendChild(div1);
+
+	var div2 = document.createElement("div");
+	div2.setAttribute("class","right");
+	div2.innerHTML = "Welcome";
+	document.getElementById("main").appendChild(div2);
+
+}
+</script>
+</head>
+<body onload="show()">
+<div id="main"></div>
+</body>
+</html>

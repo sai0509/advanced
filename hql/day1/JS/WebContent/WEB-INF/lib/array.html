@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Task | Array Operations</title>
+<script>
+var array = [90,10,30,40,5,8];
+
+
+function getContent() {
+	
+
+	document.getElementById('array').innerHTML = "Array : " + array;
+	var ascArr = array.sort(function(a,b){return a-b});
+	
+	document.getElementById('ascArr').innerHTML = "Ascending Order : " + ascArr;
+
+	var len = array.length;
+	var middle = len/2;
+	array.splice(middle,0,25);
+	document.getElementById('add25').innerHTML = "25 Adding in Middle : " + array;
+
+	array.unshift(6);
+	document.getElementById('unshift').innerHTML = "6 Added at first : " + array;
+
+	
+	array = array.map(function(n){return n*5});
+	document.getElementById('mul').innerHTML = "Multiply Every Element with 5 : " + array;
+}	
+</script>
+</head>
+<body onload="getContent()">
+	<span id="array"></span><br>
+	<span id="ascArr"></span><br>
+	<span id="add25"></span><br>
+	<span id="unshift"></span><br>
+	<span id="mul"></span><br>
+</body>
+</html>

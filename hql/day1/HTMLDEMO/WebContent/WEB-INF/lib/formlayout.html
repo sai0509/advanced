@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+.one {
+	background-color: blue;
+	padding: 40px 40px 40px 40px;
+	text-align: center;
+}
+
+input[type] {
+	width: 100%;
+	height: 90px;
+}
+
+.two {
+	padding: 40px 5px 100px 5px;
+}
+</style>
+<script>
+	function print() {
+		var arr = [document.getElementById("username").value,
+		 document.getElementById("email").value,
+		 document.getElementById("password").value,
+		 document.getElementById("firstname").value,
+		 document.getElementById("lastname").value];
+		for(i=0;i<arr.length;i++) {
+		document.getElementById("show").innerHTML += arr[i] + "<br>";
+		
+	}}
+</script>
+</head>
+<body>
+	<div class="one">
+		<h3>Sign Up</h3>
+	</div>
+	<div class="two">
+		<input type="text" id="username" placeholder="UserName"><br />
+		<br /> <input type="text" id="email" placeholder="Email Address" class="form"><br />
+		<br /> <input type="text" id="password" placeholder="Password" class="form"><br />
+		<br /> <input type="text" id="firstname" placeholder="First Name" class="form"><br />
+		<br /> <input type="text" id="lastname" placeholder="Last Name" ><br />
+		<br /> <input type="submit" value="Register" onclick="print()"
+			style="background-color: blue">
+	</div>
+	<div id="show"></div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function findEmailAddresses(StrObj) {
+	var emailsArray = StrObj.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi);
+	return emailsArray;
+}
+function getDate(d)
+{
+    var day, month, year;
+
+    result = d.match("[0-9]{2}([\-/ \.])[0-9]{2}[\-/ \.][0-9]{4}");
+    var dat=0;
+    if(null != result) {
+        dateSplitted = result[0].split(result[1]);
+        day = dateSplitted[0];
+        month = dateSplitted[1];
+        year = dateSplitted[2];
+        dat=1;
+    } 
+    result = d.match("[0-9]{4}([\-/ \.])[0-9]{2}[\-/ \.][0-9]{2}");
+    if(null != result) {
+        dateSplitted = result[0].split(result[1]);
+        day = dateSplitted[2];
+        month = dateSplitted[1];
+        year = dateSplitted[0];
+        dat=1;
+    } 
+    if(dat==0){
+    	return 'No date in string';
+    }
+
+    if(month>12) {
+        aux = day;
+        day = month;
+        month = aux;
+    }
+
+    return day+"/"+month+"/"+year;
+}
+function check(){
+var str=document.getElementById("inputString").value;
+document.write(str);
+document.write('<br/>');
+var datestr=getDate(str);
+document.write(datestr);
+document.write('<br/>');
+var email=findEmailAddresses(str);
+if(email==null){
+	document.write('Invalid Email')
+} else {
+	document.write(email+' Email is valid');
+}
+}
+</script>
+</head>
+<body>
+	Enter String with date and email<br/>
+	<input type="text" id="inputString"/>
+	<input type="button" value="Check" onclick="check()"/>
+</body>
+</html>

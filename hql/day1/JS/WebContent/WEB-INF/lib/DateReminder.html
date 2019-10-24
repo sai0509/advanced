@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+var date = "13/10/2019";
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+today = dd + '/' + mm + '/' + yyyy;
+document.write(today);
+document.write("<br>");
+document.write(date);
+if (date == today) {
+	alert("correct");
+} else {
+	alert("wrong");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>
